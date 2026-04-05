@@ -1,8 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Copy, MessageCircle, Building2, Briefcase, Coffee, Clock3 } from "lucide-react";
 
 const CONTRACT_ADDRESS = "942BoiLyWXwBe7qSsjGWofXAVe5MTYdeyPJpba2omoon";
 const TELEGRAM_LINK = "https://t.me/bored_shitless";
@@ -17,22 +13,22 @@ const signs = [
 
 const stats = [
   {
-    icon: Clock3,
+    icon: "🕒",
     title: "Clocked in",
     text: "Another day, another spreadsheet, another dream of escape.",
   },
   {
-    icon: Briefcase,
+    icon: "💼",
     title: "Office mode",
     text: "Silver-and-grey corporate energy with a meme coin soul.",
   },
   {
-    icon: Coffee,
+    icon: "☕",
     title: "Low energy",
     text: "Gary the sloth understands the grind better than anyone.",
   },
   {
-    icon: Building2,
+    icon: "🏢",
     title: "Corporate pain",
     text: "Built for everyone who has ever stared into the void of a Monday morning.",
   },
@@ -40,210 +36,491 @@ const stats = [
 
 function copyCA() {
   navigator.clipboard.writeText(CONTRACT_ADDRESS);
+  alert("Contract address copied");
 }
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-300 via-zinc-200 to-slate-100 text-zinc-900">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.75),_transparent_35%)] pointer-events-none" />
-
-      <header className="relative border-b border-zinc-400/40 backdrop-blur-sm bg-white/40 sticky top-0 z-40">
-        <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(to bottom, #d4d4d8, #e4e4e7, #f1f5f9)",
+        color: "#18181b",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <header
+        style={{
+          borderBottom: "1px solid rgba(113,113,122,0.25)",
+          background: "rgba(255,255,255,0.65)",
+          backdropFilter: "blur(8px)",
+          position: "sticky",
+          top: 0,
+          zIndex: 40,
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "14px 16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "16px",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <img
               src="/logo.png"
               alt="$BORED logo"
-              className="h-10 w-10 rounded-2xl object-cover ring-1 ring-zinc-500/20 shadow-md"
+              style={{
+                width: "42px",
+                height: "42px",
+                borderRadius: "14px",
+                objectFit: "cover",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
+              }}
             />
             <div>
-              <div className="text-lg font-semibold tracking-wide">$BORED</div>
-              <div className="text-xs text-zinc-600">Corporate survival token</div>
+              <div style={{ fontSize: "18px", fontWeight: 700 }}>$BORED</div>
+              <div style={{ fontSize: "12px", color: "#52525b" }}>
+                Corporate survival token
+              </div>
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-2">
-            <Button asChild className="rounded-2xl bg-zinc-800 hover:bg-zinc-700 text-white">
-              <a href={TELEGRAM_LINK} target="_blank" rel="noreferrer">
-                Telegram <MessageCircle className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </div>
+          <a
+            href={TELEGRAM_LINK}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              textDecoration: "none",
+              background: "#27272a",
+              color: "white",
+              padding: "10px 16px",
+              borderRadius: "16px",
+              fontWeight: 600,
+            }}
+          >
+            Telegram
+          </a>
         </div>
       </header>
 
-      <main className="relative">
-        <section className="mx-auto max-w-7xl px-4 pt-6 pb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="overflow-hidden rounded-[2rem] border border-zinc-400/30 bg-white/60 shadow-2xl"
+      <main>
+        <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "24px 16px 48px" }}>
+          <div
+            style={{
+              overflow: "hidden",
+              borderRadius: "32px",
+              background: "rgba(255,255,255,0.72)",
+              border: "1px solid rgba(113,113,122,0.20)",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.10)",
+            }}
           >
             <img
               src="/boredbanner.png"
               alt="BORED office banner"
-              className="h-44 md:h-64 w-full object-cover"
+              style={{
+                width: "100%",
+                height: "260px",
+                objectFit: "cover",
+                display: "block",
+              }}
             />
-            <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-6 p-6 md:p-10">
-              <div className="space-y-6">
-                <div className="inline-flex items-center rounded-full border border-zinc-400/30 bg-white/70 px-4 py-2 text-sm text-zinc-700 shadow-sm">
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1.15fr 0.85fr",
+                gap: "24px",
+                padding: "32px",
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    display: "inline-block",
+                    padding: "10px 16px",
+                    borderRadius: "999px",
+                    background: "rgba(255,255,255,0.8)",
+                    border: "1px solid rgba(113,113,122,0.20)",
+                    color: "#52525b",
+                    fontSize: "14px",
+                    marginBottom: "22px",
+                  }}
+                >
                   Modern office vibes. Terminal burnout. Gary gets it.
                 </div>
 
-                <div className="space-y-4">
-                  <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-none text-zinc-900">
-                    The token for everyone
-                    <span className="block text-zinc-500">bored of the daily grind.</span>
-                  </h1>
-                  <p className="max-w-2xl text-base md:text-lg text-zinc-700 leading-7">
-                    $BORED captures the office-building mood: polished on the outside, spiritually exhausted on the inside.
-                    Gary the sloth is here for every drained commute, every fake smile, and every meeting that could have been an email.
-                  </p>
-                </div>
+                <h1
+                  style={{
+                    fontSize: "56px",
+                    lineHeight: 1,
+                    margin: "0 0 18px 0",
+                    fontWeight: 900,
+                  }}
+                >
+                  The token for everyone
+                  <span style={{ display: "block", color: "#71717a" }}>
+                    bored of the daily grind.
+                  </span>
+                </h1>
 
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild size="lg" variant="outline" className="rounded-2xl bg-white/75 border-zinc-400/40">
-                    <a href={TELEGRAM_LINK} target="_blank" rel="noreferrer">
-                      Join Telegram <MessageCircle className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
+                <p
+                  style={{
+                    fontSize: "18px",
+                    lineHeight: 1.7,
+                    color: "#3f3f46",
+                    maxWidth: "700px",
+                    marginBottom: "22px",
+                  }}
+                >
+                  $BORED captures the office-building mood: polished on the outside,
+                  spiritually exhausted on the inside. Gary the sloth is here for every
+                  drained commute, every fake smile, and every meeting that could have
+                  been an email.
+                </p>
+
+                <a
+                  href={TELEGRAM_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: "inline-block",
+                    textDecoration: "none",
+                    background: "white",
+                    color: "#18181b",
+                    padding: "14px 22px",
+                    borderRadius: "18px",
+                    border: "1px solid rgba(113,113,122,0.22)",
+                    fontWeight: 700,
+                  }}
+                >
+                  Join Telegram
+                </a>
               </div>
 
-              <Card className="rounded-[2rem] border-zinc-400/30 bg-gradient-to-br from-zinc-100 to-slate-200 shadow-xl">
-                <CardContent className="p-6 md:p-7 space-y-5">
-                  <div className="flex items-center gap-4">
-                    <img
-                      src="/bored1.png"
-                      alt="Gary the sloth"
-                      className="h-20 w-20 rounded-3xl object-cover shadow-md ring-1 ring-zinc-500/20"
-                    />
-                    <div>
-                      <div className="text-sm uppercase tracking-[0.25em] text-zinc-500">Featured employee</div>
-                      <div className="text-2xl font-bold">Gary</div>
-                      <p className="text-sm text-zinc-600">Head of burnout, morale, and doing the bare minimum beautifully.</p>
+              <div
+                style={{
+                  borderRadius: "32px",
+                  background: "linear-gradient(to bottom right, #f4f4f5, #e2e8f0)",
+                  border: "1px solid rgba(113,113,122,0.20)",
+                  boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+                  padding: "24px",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "20px" }}>
+                  <img
+                    src="/bored1.png"
+                    alt="Gary the sloth"
+                    style={{
+                      width: "82px",
+                      height: "82px",
+                      borderRadius: "24px",
+                      objectFit: "cover",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
+                    }}
+                  />
+                  <div>
+                    <div
+                      style={{
+                        fontSize: "12px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.2em",
+                        color: "#71717a",
+                      }}
+                    >
+                      Featured employee
                     </div>
-                  </div>
-
-                  <div className="rounded-3xl border border-zinc-400/30 bg-white/80 p-4 shadow-sm">
-                    <div className="text-xs uppercase tracking-[0.25em] text-zinc-500 mb-2">Contract address</div>
-                    <div className="break-all font-mono text-sm text-zinc-800">{CONTRACT_ADDRESS}</div>
-                    <div className="mt-4 flex flex-wrap gap-3">
-                      <Button onClick={copyCA} className="rounded-2xl bg-zinc-800 hover:bg-zinc-700 text-white">
-                        Copy CA <Copy className="ml-2 h-4 w-4" />
-                      </Button>
-                      <Button asChild variant="outline" className="rounded-2xl bg-white border-zinc-400/40">
-                        <a href={TELEGRAM_LINK} target="_blank" rel="noreferrer">Telegram</a>
-                      </Button>
+                    <div style={{ fontSize: "28px", fontWeight: 800, marginTop: "4px" }}>
+                      Gary
                     </div>
-                  </div>
-
-                  <div className="rounded-3xl border border-zinc-400/30 bg-zinc-900 text-zinc-100 p-4">
-                    <div className="text-xs uppercase tracking-[0.25em] text-zinc-400 mb-2">Office memo</div>
-                    <p className="text-sm leading-6 text-zinc-200">
-                      We are not chasing hustle culture. We are documenting the emotional reality of fluorescent lighting,
-                      passive-aggressive emails, and pretending the team-building session was fun.
+                    <p style={{ margin: "6px 0 0 0", fontSize: "14px", color: "#52525b" }}>
+                      Head of burnout, morale, and doing the bare minimum beautifully.
                     </p>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
-        </section>
+                </div>
 
-        <section className="mx-auto max-w-7xl px-4 pb-8">
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
-            {stats.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
+                <div
+                  style={{
+                    borderRadius: "24px",
+                    background: "rgba(255,255,255,0.85)",
+                    border: "1px solid rgba(113,113,122,0.18)",
+                    padding: "18px",
+                    marginBottom: "18px",
+                  }}
                 >
-                  <Card className="rounded-[1.75rem] border-zinc-400/30 bg-white/70 shadow-lg h-full">
-                    <CardContent className="p-6 space-y-4">
-                      <div className="h-11 w-11 rounded-2xl bg-zinc-800 text-white flex items-center justify-center shadow-md">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold">{item.title}</h3>
-                        <p className="mt-2 text-zinc-600 leading-6 text-sm">{item.text}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
+                  <div
+                    style={{
+                      fontSize: "12px",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.2em",
+                      color: "#71717a",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Contract address
+                  </div>
+
+                  <div
+                    style={{
+                      fontFamily: "monospace",
+                      fontSize: "14px",
+                      lineHeight: 1.6,
+                      color: "#27272a",
+                      wordBreak: "break-all",
+                    }}
+                  >
+                    {CONTRACT_ADDRESS}
+                  </div>
+
+                  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" }}>
+                    <button
+                      onClick={copyCA}
+                      style={{
+                        background: "#27272a",
+                        color: "white",
+                        border: "none",
+                        padding: "12px 18px",
+                        borderRadius: "16px",
+                        fontWeight: 700,
+                        cursor: "pointer",
+                      }}
+                    >
+                      Copy CA
+                    </button>
+
+                    <a
+                      href={TELEGRAM_LINK}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        background: "white",
+                        color: "#18181b",
+                        border: "1px solid rgba(113,113,122,0.22)",
+                        padding: "12px 18px",
+                        borderRadius: "16px",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Telegram
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    borderRadius: "24px",
+                    background: "#18181b",
+                    color: "#f4f4f5",
+                    padding: "18px",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "12px",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.2em",
+                      color: "#a1a1aa",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Office memo
+                  </div>
+                  <p style={{ margin: 0, fontSize: "14px", lineHeight: 1.7, color: "#e4e4e7" }}>
+                    We are not chasing hustle culture. We are documenting the emotional
+                    reality of fluorescent lighting, passive-aggressive emails, and
+                    pretending the team-building session was fun.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-10">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-stretch">
-            <Card className="rounded-[2rem] border-zinc-400/30 bg-white/70 shadow-xl overflow-hidden">
-              <CardContent className="p-0 h-full">
-                <div className="grid md:grid-cols-2 h-full">
-                  <div className="p-7 md:p-8 flex flex-col justify-center">
-                    <div className="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-3">Daily life</div>
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Gary in the building</h2>
-                    <p className="text-zinc-700 leading-7 mb-4">
-                      Use the illustrated BORED assets throughout the page to make it feel alive. Gary should appear like the unofficial mascot of every underpaid, over-caffeinated department.
-                    </p>
-                    <p className="text-zinc-600 text-sm leading-6">
-                      This section is a great place for lore, roadmap humour, community copy, or a light-hearted explanation of what $BORED stands for.
-                    </p>
+        <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 16px 32px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "16px",
+            }}
+          >
+            {stats.map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  borderRadius: "28px",
+                  background: "rgba(255,255,255,0.75)",
+                  border: "1px solid rgba(113,113,122,0.18)",
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
+                  padding: "24px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "46px",
+                    height: "46px",
+                    borderRadius: "16px",
+                    background: "#27272a",
+                    color: "white",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "22px",
+                    marginBottom: "16px",
+                  }}
+                >
+                  {item.icon}
+                </div>
+                <h3 style={{ margin: "0 0 10px 0", fontSize: "22px" }}>{item.title}</h3>
+                <p style={{ margin: 0, color: "#52525b", fontSize: "14px", lineHeight: 1.7 }}>
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "18px 16px 40px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1.1fr 0.9fr",
+              gap: "24px",
+            }}
+          >
+            <div
+              style={{
+                borderRadius: "32px",
+                background: "rgba(255,255,255,0.75)",
+                border: "1px solid rgba(113,113,122,0.18)",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "100%" }}>
+                <div style={{ padding: "32px" }}>
+                  <div
+                    style={{
+                      fontSize: "12px",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.25em",
+                      color: "#71717a",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Daily life
                   </div>
+                  <h2 style={{ fontSize: "42px", margin: "0 0 16px 0" }}>Gary in the building</h2>
+                  <p style={{ color: "#3f3f46", lineHeight: 1.8, marginBottom: "14px" }}>
+                    Use the illustrated BORED assets throughout the page to make it feel
+                    alive. Gary should appear like the unofficial mascot of every underpaid,
+                    over-caffeinated department.
+                  </p>
+                  <p style={{ color: "#52525b", lineHeight: 1.7, fontSize: "14px", margin: 0 }}>
+                    This section is a great place for lore, roadmap humour, community copy,
+                    or a light-hearted explanation of what $BORED stands for.
+                  </p>
+                </div>
+
+                <img
+                  src="/bored3.png"
+                  alt="BORED character art"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: "320px" }}
+                />
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "16px",
+              }}
+            >
+              {signs.map((sign) => (
+                <div
+                  key={sign.src}
+                  style={{
+                    borderRadius: "24px",
+                    overflow: "hidden",
+                    background: "rgba(255,255,255,0.78)",
+                    border: "1px solid rgba(113,113,122,0.18)",
+                    boxShadow: "0 10px 24px rgba(0,0,0,0.07)",
+                  }}
+                >
                   <img
-                    src="/bored3.png"
-                    alt="BORED character art"
-                    className="h-full min-h-[320px] w-full object-cover"
+                    src={sign.src}
+                    alt={sign.alt}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      minHeight: "170px",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
                   />
                 </div>
-              </CardContent>
-            </Card>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
-              {signs.map((sign, i) => (
-                <motion.div
-                  key={sign.src}
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.35, delay: i * 0.06 }}
-                  className="group"
-                >
-                  <Card className="overflow-hidden rounded-[1.5rem] border-zinc-400/30 bg-white/75 shadow-lg h-full">
-                    <CardContent className="p-0 h-full">
-                      <img
-                        src={sign.src}
-                        alt={sign.alt}
-                        className="h-full w-full min-h-[160px] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                      />
-                    </CardContent>
-                  </Card>
-                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 pb-16">
-          <Card className="rounded-[2rem] border-zinc-400/30 bg-zinc-900 text-white shadow-2xl overflow-hidden">
-            <CardContent className="p-8 md:p-10 grid lg:grid-cols-[1fr_auto] gap-6 items-center">
-              <div>
-                <div className="text-xs uppercase tracking-[0.3em] text-zinc-400 mb-3">Join the department</div>
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-3">Clock in. Zone out. Hold $BORED.</h2>
-                <p className="max-w-2xl text-zinc-300 leading-7">
-                  The contract is live, the Telegram is ready, and Gary is already emotionally unavailable.
-                </p>
+        <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 16px 64px" }}>
+          <div
+            style={{
+              borderRadius: "32px",
+              background: "#18181b",
+              color: "white",
+              boxShadow: "0 20px 45px rgba(0,0,0,0.18)",
+              padding: "36px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "20px",
+              flexWrap: "wrap",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontSize: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.25em",
+                  color: "#a1a1aa",
+                  marginBottom: "10px",
+                }}
+              >
+                Join the department
               </div>
-              <div className="flex flex-wrap gap-3">
-                <Button asChild size="lg" variant="outline" className="rounded-2xl border-zinc-600 bg-transparent text-white hover:bg-white/10">
-                  <a href={TELEGRAM_LINK} target="_blank" rel="noreferrer">Telegram Group</a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+              <h2 style={{ fontSize: "48px", margin: "0 0 12px 0", lineHeight: 1.05 }}>
+                Clock in. Zone out. Hold $BORED.
+              </h2>
+              <p style={{ margin: 0, color: "#d4d4d8", lineHeight: 1.7, maxWidth: "700px" }}>
+                The contract is live, the Telegram is ready, and Gary is already emotionally unavailable.
+              </p>
+            </div>
+
+            <a
+              href={TELEGRAM_LINK}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "white",
+                border: "1px solid rgba(255,255,255,0.22)",
+                padding: "14px 20px",
+                borderRadius: "18px",
+                fontWeight: 700,
+              }}
+            >
+              Telegram Group
+            </a>
+          </div>
         </section>
       </main>
     </div>
