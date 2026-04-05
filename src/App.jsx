@@ -28,6 +28,18 @@ function App() {
         HR has suggested pizza Fridays.”
       </p>
 
+      <h2>📎 Internal Memo #002</h2>
+<p>
+  “Employees are reminded that selling the top was optional.
+  Participation was… limited.”
+</p>
+
+<h2>📎 Internal Memo #003</h2>
+<p>
+  “Morale remains low despite stable market conditions.
+  No further updates.”
+</p>
+
       <hr />
 
       <h2>🧑‍💼 Employee Spotlight</h2>
@@ -38,3 +50,5 @@ function App() {
 }
 
 export default App;
+
+
